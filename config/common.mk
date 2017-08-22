@@ -103,6 +103,7 @@ PRODUCT_PACKAGES += \
     Nova \
     NovaGoogleCompanion
     BluetoothExt 
+    BluetoothExt
 #    WolvesDen \
 #    ThemeInterfacer \
 #    Eleven \
@@ -231,9 +232,9 @@ endif
 
 # Versioning System
 # phenom first version.
-PRODUCT_VERSION_MAJOR = 7.1.2
-PRODUCT_VERSION_MINOR = STABLE
-PRODUCT_VERSION_MAINTENANCE = 15.1
+PRODUCT_VERSION_MAJOR = 8.0
+PRODUCT_VERSION_MINOR = EXPERIMENTAL
+PRODUCT_VERSION_MAINTENANCE = 1.0
 PHENOM_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
 ifdef PHENOM_BUILD_EXTRA
     PHENOM_POSTFIX := -$(PHENOM_BUILD_EXTRA)
