@@ -102,6 +102,16 @@ PRODUCT_PACKAGES += \
     Turbo \
     Nova \
     NovaGoogleCompanion
+    BluetoothExt 
+#    WolvesDen \
+#    ThemeInterfacer \
+#    Eleven \
+#    OmniSwitch \
+#    OmniJaws \
+#    OmniStyle \
+#    Turbo \
+#    Nova \
+#    NovaGoogleCompanion
 
 # Extra tools
 PRODUCT_PACKAGES += \
@@ -109,52 +119,58 @@ PRODUCT_PACKAGES += \
     e2fsck \
     mke2fs \
     tune2fs \
-    mount.exfat \
     fsck.exfat \
     mkfs.exfat \
     ntfsfix \
     ntfs-3g
 
 # MusicFX advanced effects
-ifneq ($(TARGET_NO_DSPMANAGER), true)
-PRODUCT_PACKAGES += \
-    libcyanogen-dsp \
-    audio_effects.conf
-endif
+#ifneq ($(TARGET_NO_DSPMANAGER), true)
+#PRODUCT_PACKAGES += \
+#    libcyanogen-dsp \
+#    audio_effects.conf
+#endif
 
 # Custom off-mode charger
-ifneq ($(WITH_CM_CHARGER),false)
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    cm_charger_res_images \
-    font_log.png \
-    libhealthd.cm
-endif
+#ifneq ($(WITH_CM_CHARGER),false)
+#PRODUCT_PACKAGES += \
+#    charger_res_images \
+#    cm_charger_res_images \
+#    font_log.png \
+#    libhealthd.cm
+#endif
 
 # DU Utils library
-PRODUCT_BOOT_JARS += \
-    org.dirtyunicorns.utils
+#PRODUCT_BOOT_JARS += \
+#    org.dirtyunicorns.utils
 
 # DU Utils library
-PRODUCT_PACKAGES += \
-    org.dirtyunicorns.utils
+#PRODUCT_PACKAGES += \
+#    org.dirtyunicorns.utils
 
-ifeq ($(DEFAULT_ROOT_METHOD),magisk)
+#ifeq ($(DEFAULT_ROOT_METHOD),magisk)
 # Magisk Manager
-PRODUCT_PACKAGES += \
-    MagiskManager
+#PRODUCT_PACKAGES += \
+#    MagiskManager
 
 # Magisk
 PRODUCT_COPY_FILES += \
    vendor/phenom/prebuilt/common/addon.d/magisk.zip:system/addon.d/magisk.zip
 endif
+#PRODUCT_COPY_FILES += \
+#   vendor/phenom/prebuilt/common/addon.d/magisk.zip:system/addon.d/magisk.zip
+#endif
 
-ifeq ($(DEFAULT_ROOT_METHOD),supersu)
+#ifeq ($(DEFAULT_ROOT_METHOD),supersu)
 # SuperSU
 PRODUCT_COPY_FILES += \
    vendor/phenom/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
    vendor/phenom/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 endif
+#PRODUCT_COPY_FILES += \
+#   vendor/phenom/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+#   vendor/phenom/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+#endif
 
 # Explict rootless defined, or none of the root methods defined,
 # default rootless : nothing todo
@@ -174,7 +190,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/gzosp/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/phenom/overlay/common
 
 # Boot animation include
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
@@ -188,7 +204,7 @@ TARGET_BOOTANIMATION_SIZE := $(shell \
   fi )
 
 # get a sorted list of the sizes
-bootanimation_sizes := $(subst .zip,, $(shell ls vendor/gzosp/prebuilt/common/bootanimation))
+bootanimation_sizes := $(subst .zip,, $(shell ls vendor/phenom/prebuilt/common/bootanimation))
 bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_sizes)) | sort -rn)
 
 # find the appropriate size and set
