@@ -4,4 +4,4 @@
 #
 L="log -p i -t phenom"
 
-$L "Welcome to Android `getprop ro.build.version.release` / Phenom `getprop ro.gzosp.version`";
+$L "Welcome to Android `getprop ro.build.version.release` / Phenom `getprop ro.phenom.version`";
