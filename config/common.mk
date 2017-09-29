@@ -28,7 +28,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/phenom/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/phenom/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/phenom/prebuilt/common/bin/50-gzosp.sh:system/addon.d/50-gzosp.sh
+    vendor/phenom/prebuilt/common/bin/50-phenom.sh:system/addon.d/50-phenom.sh
 
 # Backup services whitelist
 PRODUCT_COPY_FILES += \
@@ -38,9 +38,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/phenom/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
-# Gzosp-specific init file
+# Phenom-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/phenom/prebuilt/common/etc/init.local.rc:root/init.gzosp.rc
+    vendor/phenom/prebuilt/common/etc/init.local.rc:root/init.phenom.rc
 
 # Copy LatinIME for gesture typing
 PRODUCT_COPY_FILES += \
